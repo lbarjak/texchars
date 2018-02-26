@@ -37,22 +37,17 @@
             /*
             var ekezet = [];
             for (let key in chars) {
-                if (chars.hasOwnProperty(key)) {
-                    ekezet.push(chars[key]);
-                }
-                var ekezetek = ekezet.join('');
+                ekezet.push(chars[key]);
             }
-            console.log("ekezetek: ", ekezetek);
+            ekezet = ekezet.join('');
+            console.log("ekezet: ", ekezet);
             */
             var input = document.getElementById('input').value;
             var result = [];
-            var character = '';
             for (i = 0; i < input.length; i++) {
-                character = chars[input[i]] ? chars[input[i]] : input[i];
-                result.push(character);
+                result.push(chars[input[i]] ? chars[input[i]] : input[i]);
             }
-            result = result.join('');
-            document.getElementById('result').innerHTML = "result: " + result;
+            document.getElementById('result').innerHTML = "result: " + result.join('');
         }
         document.getElementById('submit').addEventListener('click', io);
     </script>
