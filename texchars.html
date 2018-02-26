@@ -1,0 +1,61 @@
+<html>
+<title>
+    TEXchars
+</title>
+
+<head>
+</head>
+
+<body>
+    input: <input id="input" autofocus>
+    <button id="submit">submit</button>
+    <hr />
+    <div id="result"></div>
+
+    <script>
+        function io() {
+            var chars = {
+                á: "\\'a",
+                é: "\\'e",
+                í: "\\'i",
+                ó: "\\'o",
+                ö: '\\"o',
+                ő: '\\H o',
+                ú: "\\'u",
+                ü: '\\"u',
+                ű: '\\H u',
+                Á: "\\'A",
+                É: "\\'E",
+                Í: "\\'I",
+                Ó: "\\'O",
+                Ö: '\\"O',
+                Ő: '\\H O',
+                Ú: "\\'U",
+                Ü: '\\"U',
+                Ű: '\\H U',
+            }
+            /*
+            var ekezet = [];
+            for (let key in chars) {
+                if (chars.hasOwnProperty(key)) {
+                    ekezet.push(chars[key]);
+                }
+                var ekezetek = ekezet.join('');
+            }
+            console.log("ekezetek: ", ekezetek);
+            */
+            var input = document.getElementById('input').value;
+            var result = [];
+            var character = '';
+            for (i = 0; i < input.length; i++) {
+                character = chars[input[i]] ? chars[input[i]] : input[i];
+                result.push(character);
+            }
+            result = result.join('');
+            document.getElementById('result').innerHTML = "result: " + result;
+        }
+        document.getElementById('submit').addEventListener('click', io);
+    </script>
+</body>
+
+</html>
