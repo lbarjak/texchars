@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    input: <input id="input" autofocus>
+    <span id="io">input text: </span><input id="input" autofocus>
     <button id="submit">submit</button>
     <hr />
     <div id="result"></div>
@@ -47,7 +47,11 @@
             for (i = 0; i < input.length; i++) {
                 result.push(chars[input[i]] ? chars[input[i]] : input[i]);
             }
-            document.getElementById('result').innerHTML = "result: " + result.join('');
+            document.getElementById('input').value = result.join('');
+            document.getElementById('io').innerHTML = "copied to clipboard: ";
+            var copyObject = document.getElementById("input");
+            copyObject.select();
+            document.execCommand("Copy");
         }
         document.getElementById('submit').addEventListener('click', io);
     </script>
