@@ -11,6 +11,8 @@
     <button id="submit">enter</button>
 
     <script>
+        var input = document.getElementById('input');
+
         function io() {
             var chars = {
                 á: "\\'a",
@@ -40,14 +42,14 @@
             ekezet = ekezet.join('');
             console.log("ekezet: ", ekezet);
             */
-            var input = document.getElementById('input').value;
+            var inpval = input.value;
             var result = [];
-            for (i = 0; i < input.length; i++) {
-                result.push(chars[input[i]] ? chars[input[i]] : input[i]);
+            for (i = 0; i < inpval.length; i++) {
+                result.push(chars[inpval[i]] ? chars[inpval[i]] : inpval[i]);
             }
-            document.getElementById('input').value = result.join('');
+            input.value = result.join('');
             document.getElementById('io').innerHTML = "copied to clipboard: ";
-            document.getElementById("input").select();
+            input.select();
             document.execCommand("Copy");
             setTimeout(function() {
                 location.reload();
@@ -55,7 +57,6 @@
         }
 
         document.getElementById('submit').addEventListener('click', io);
-        var input = document.getElementById("input");
         input.addEventListener("keyup", function(event) {
             //event.preventDefault();
             if (event.keyCode === 13) {
