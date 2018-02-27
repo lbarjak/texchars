@@ -50,7 +50,9 @@
             var copyObject = document.getElementById("input");
             copyObject.select();
             document.execCommand("Copy");
-            setTimeout(function(){ location.reload(); }, 2000);
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
         }
 
         document.getElementById('submit').addEventListener('click', io);
