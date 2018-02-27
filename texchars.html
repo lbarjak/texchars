@@ -8,7 +8,7 @@
 
 <body>
     <span id="io">input text: </span><input id="input" autofocus>
-    <button id="submit">submit</button>
+    <button id="submit">enter</button>
 
     <script>
         function io() {
@@ -50,7 +50,9 @@
             var copyObject = document.getElementById("input");
             copyObject.select();
             document.execCommand("Copy");
+            setTimeout(function(){ location.reload(); }, 2000);
         }
+
         document.getElementById('submit').addEventListener('click', io);
         var input = document.getElementById("input");
         input.addEventListener("keyup", function(event) {
