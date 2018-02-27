@@ -47,8 +47,7 @@
             }
             document.getElementById('input').value = result.join('');
             document.getElementById('io').innerHTML = "copied to clipboard: ";
-            var copyObject = document.getElementById("input");
-            copyObject.select();
+            document.getElementById("input").select();
             document.execCommand("Copy");
             setTimeout(function() {
                 location.reload();
